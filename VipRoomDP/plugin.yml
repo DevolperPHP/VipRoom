@@ -1,0 +1,17 @@
+---
+name: VipRoomDP
+author: JUZEXMOD/DevolperPHP
+main: VipRoomDP\Main
+version: 1.0
+api: [2.0.0]
+
+commands:
+  viproom:
+    description: Viproom Command
+    use: "/viproom"
+    permission: viproomdp.viproom
+    
+permission:
+  viproomdp.viproom:
+    description: "Viproom Command"
+    default: op
