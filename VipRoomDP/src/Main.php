@@ -16,7 +16,7 @@ class ExpLevel extends PluginBase{
   
   public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
     switch($cmd->getName()){
-      case 'teleport':
+      case 'viproom':
         if($sender->hasPermission("viproomdp.viproom")){
           $sender->teleport(new position(x, y, z)); /* edit the x y z */
         } else {
