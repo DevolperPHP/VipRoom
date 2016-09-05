@@ -21,8 +21,8 @@ class ExpLevel extends PluginBase{
     switch($cmd->getName()){
       case 'viproom':
         $x = $sender->getFloorX();
-    		$y = $sender->getFloorY();
-    		$z = $sender->getFloorZ();
+        $y = $sender->getFloorY();
+        $z = $sender->getFloorZ();
         $this->getConfig()->get("x1", $x);
         $this->getConfig()->get("y1", $y);
         $this->getConfig()->get("z1", $z);
