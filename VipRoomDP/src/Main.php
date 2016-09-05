@@ -20,9 +20,12 @@ class ExpLevel extends PluginBase{
   public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
     switch($cmd->getName()){
       case 'viproom':
-        $x = $this->getConfig()->get("X");
-        $y = $this->getConfig()->get("Y");
-        $z = $this->getConfig()->get("Z");
+        $x = $sender->getFloorX();
+    		$y = $sender->getFloorY();
+    		$z = $sender->getFloorZ();
+        $this->getConfig()->get("x1", $x);
+        $this->getConfig()->get("y1", $y);
+        $this->getConfig()->get("z1", $z);
         if($sender->hasPermission("viproomdp.viproom")){
           $sender->teleport(new position($x, $y, $z));
           $this->getConfig()->save();
