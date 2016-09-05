@@ -7,6 +7,8 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\level\Position;
 use pocketmine\permission;
+use pocketmine\utils\TextFormat as Color;
+use pocketmine\utils\Config;
 
 class ExpLevel extends PluginBase{
   
@@ -17,8 +19,12 @@ class ExpLevel extends PluginBase{
   public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
     switch($cmd->getName()){
       case 'viproom':
+        $x = $this->getConfig()->get("X");
+        $y = $this->getConfig()->get("Y");
+        $z = $this->getConfig()->get("Z");
         if($sender->hasPermission("viproomdp.viproom")){
-          $sender->teleport(new position(x, y, z)); /* edit the x y z */
+          $sender->teleport(new position($x, $y, $z));
+          $sender->sendMessage(Color::AQUA."Welcome To VIP Room");
         } else {
           $sender->sendMessage(Color::RED."You Not VIP");
         }
